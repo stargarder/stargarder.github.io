@@ -15,6 +15,32 @@
     <h1>DEMO</h1>
     <h2>Stargarder gegen Verdrängung</h2>
     <p class="location">6. März um 18:00 bei der Gethsemane-Kirche</p>
+	<div class="message">
+		<p>
+			Ein Haus mit 40 Familien wurde über Nacht ohne Angebot einer Ersatzunterkunft geräumt. Das ist nun schon seit über einem Monat so. Die Reparaturarbeiten ziehen sich endlos hin und führen zu einer Gentrifizierung.
+			
+			Lasst uns gemeinsam die unmenschliche Politik der Vermieter stoppen!
+			Landlord sind keine MenschenLord! 
+			Die Stadt ist für Menschen da, nicht für möblierte Luxuswohnungen!
+
+			Wir brauchen Wasser! Wir brauchen Licht! Wir brauchen Heizung!
+
+			Unterstützt eure Nachbarn! 
+			Gemeinsam können wir die Entmenschlichung unserer Straße stoppen!
+		</p>
+		<p>
+			A house with 40 families was evicted in one night without any offers of alternative housing. ALready for more then 1 month. Repair work is becoming endless and turning into gentrification.
+
+			Let's stop the inhumane policies of landlords together!
+			Landlords are not humanlords! 
+			The city is for people, not furnished luxury apartments!
+
+			We need water! We need light! We need heating!
+
+			Support your neighbors! 
+			Together we can stop dehumanisation of our street!
+		</p>
+	</div>
     <h3>Media Coverage</h3>
     <ul class="media-coverage">
       <li>
@@ -75,12 +101,14 @@
   body {
 	padding-top: 50px;
 	padding-bottom: 50px;
+	padding-left: 25px;
+	padding-right: 25px;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: rgb(241 0 239);;
-    color: black;
+    color: white;
     & > * + * {
       margin-top: 1em;
     }
@@ -97,7 +125,7 @@
   }
   h2,
   .location {
-    font-family: "Stefan Simple", cursive;
+    font-family: "Stefan Simple";
     text-transform: uppercase;
     letter-spacing: -0.01em;
     font-size: calc(20px + 2vw);
@@ -113,6 +141,21 @@
     text-transform: uppercase;
     letter-spacing: -0.01em;
     font-size: calc(50px + 3vw);
+  }
+  .message {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2ch;
+	max-width: 100ch;
+	font-size: 20px;
+	font-family: "Stefan Simple";
+	white-space: pre-line;
+	@media (max-width: 800px) {
+		grid-template-columns: 1fr;
+		& > * + * {
+			margin-top: 2ch;
+		}
+	}
   }
   .media-coverage {
     font-family: "Gravity", sans-serif;

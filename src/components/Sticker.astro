@@ -1,0 +1,68 @@
+---
+const { content } = Astro.props;
+const id = (Math.random() * 1_000_000).toString(36).replace(".", "");
+---
+<div class="sticker" id={id}>
+  { content }
+</div>
+
+<script define:vars={{id}}>
+    const sticker = document.getElementById(id);
+    window.addEventListener("load", () => {
+        const randomX = Math.random() * document.body.clientWidth;
+        const randomY = 100 + Math.random() * (document.body.clientHeight - 200);
+        sticker.style.left = `${randomX}px`;
+        sticker.style.top = `${randomY}px`;
+    });
+    sticker.addEventListener("click", () => {
+        sticker.classList.add("clicked");
+        setTimeout(() => {
+            sticker.remove();
+        }, 500);
+    });
+</script>
+
+<style lang="scss" is:global>
+    .clicked {
+        opacity: 0 !important;
+        margin-top: 100px;
+    }
+</style>
+
+<style lang="scss">
+    @keyframes float {
+        0% {
+            transform: translateX(-50%) translateY(-50%);
+        }
+        50% {
+            transform: translateX(-50%) translateY(calc(-50% - 20px));
+        }
+        100% {
+            transform: translateX(-50%) translateY(-50%);
+        }
+        
+    }
+    .sticker {
+        user-select: none;
+        font-family: "Stefan Bubble";
+        font-size: calc(10px + 3vw);
+        width: 1em;
+        height: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        color: black;
+        border-radius: 9999px;
+        padding: 1em;
+        font-weight: 400;
+        position: absolute;
+        animation: float 3s ease-in-out infinite;
+        cursor: crosshair;
+        opacity: 1;
+        transition-duration: 250ms;
+        transition-property: opacity margin-top;
+        transition-timing-function: ease-out;
+        filter: drop-shadow(0px 0px 10px #000b);
+    }
+</style>

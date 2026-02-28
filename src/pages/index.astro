@@ -1,5 +1,5 @@
 ---
-
+import Sticker from "../components/Sticker.astro";
 ---
 
 <html lang="en">
@@ -12,56 +12,83 @@
     <title>Stargarder gegen Verdrängung</title>
   </head>
   <body>
-    <h1>DEMO</h1>
-    <h2>Stargarder gegen Verdrängung</h2>
+    <div class="stickers">
+      <Sticker content="👾" />
+      <Sticker content="⚡" />
+      <Sticker content="⛈" />
+      <Sticker content="🤡" />
+      <Sticker content="💩" />
+      <Sticker content="👻" />
+    </div>
+    <h1>Demo</h1>
+    <h2>Stargarder gegen Verdrangung</h2>
+    <h1>Komm! Mach Mit! Solidarität! Come! Join! Solidarity!</h1>
     <p class="location">6. März um 18:00 bei der Gethsemane-Kirche</p>
-	<div class="message">
-		<p>
-			Ein Haus mit 40 Familien wurde über Nacht ohne Angebot einer Ersatzunterkunft geräumt. Das ist nun schon seit über einem Monat so. Die Reparaturarbeiten ziehen sich endlos hin und führen zu einer Gentrifizierung.
-			
-			Lasst uns gemeinsam die unmenschliche Politik der Vermieter stoppen!
-			Landlord sind keine MenschenLord! 
-			Die Stadt ist für Menschen da, nicht für möblierte Luxuswohnungen!
-
-			Wir brauchen Wasser! Wir brauchen Licht! Wir brauchen Heizung!
-
-			Unterstützt eure Nachbarn! 
-			Gemeinsam können wir die Entmenschlichung unserer Straße stoppen!
-		</p>
-		<p>
-			A house with 40 families was evicted in one night without any offers of alternative housing. ALready for more then 1 month. Repair work is becoming endless and turning into gentrification.
-
-			Let's stop the inhumane policies of landlords together!
-			Landlords are not humanlords! 
-			The city is for people, not furnished luxury apartments!
-
-			We need water! We need light! We need heating!
-
-			Support your neighbors! 
-			Together we can stop dehumanisation of our street!
-		</p>
-	</div>
     <h3>Media Coverage</h3>
-    <ul class="media-coverage">
-      <li>
-        <a
-          href="https://taz.de/Kellerbrand-in-der-Stargarder-Strasse/!6157145/"
-          target="_blank">TAZ.de – 27.2.2026</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://www.berliner-zeitung.de/mensch-metropole/unfaehigkeit-oder-entmietung-der-kellerbrand-in-der-stargarder-strasse-li.10019128"
-          target="_blank">Berliner Zeitung – 15.2.2026</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://www.morgenpost.de/bezirke/pankow/article411262470/bittere-botschaften-nach-brand-120-menschen-ihrer-haeuser-beraubt.html"
-          target="_blank">Morgenpost – 21.2.2026</a
-        >
-      </li>
-    </ul>
+    <div class="media-coverage">
+      <a
+        href="https://taz.de/Kellerbrand-in-der-Stargarder-Strasse/!6157145/"
+        target="_blank">TAZ.de</a
+      >
+      <data> 27.2.2026 </data>
+      <a
+        href="https://www.morgenpost.de/bezirke/pankow/article411262470/bittere-botschaften-nach-brand-120-menschen-ihrer-haeuser-beraubt.html"
+        target="_blank">Morgenpost</a
+      >
+      <data> 21.2.2026 </data>
+      <a
+        href="https://www.berliner-zeitung.de/mensch-metropole/unfaehigkeit-oder-entmietung-der-kellerbrand-in-der-stargarder-strasse-li.10019128"
+        target="_blank">Berliner Zeitung</a
+      >
+      <data> 15.2.2026 </data>
+      <a
+        href="https://www.loky.news/loky-sprengung-jahn-sportpark/#:~:text=was%20tun%2C%20wenn's%20brennt%3F"
+        target="_blank"
+      >
+        Loky News
+      </a>
+      <data> 13.2.2026 </data>
+      <a
+        href="https://www.tagesspiegel.de/berlin/bezirke/pankow/ein-kellerbrand-mit-verheerenden-folgen-40-familien-in-berlin-sind-seit-wochen-wohnungslos--ein-ende-ist-nicht-in-sicht-15236237.html"
+        target="_blank"
+      >
+        Tagesspiegel
+      </a>
+      <data> 12.2.2026 </data>
+    </div>
+    <h1>Our Story</h1>
+    <div class="message">
+      <p>
+        Ein Haus mit 40 Familien wurde über Nacht ohne Angebot einer
+        Ersatzunterkunft geräumt. Das ist nun schon seit über einem Monat so.
+        Die Reparaturarbeiten ziehen sich endlos hin und führen zu einer
+        Gentrifizierung.
+      </p>
+      <p>
+        Lasst uns gemeinsam die unmenschliche Politik der Vermieter stoppen!
+        Landlord sind keine MenschenLord! Die Stadt ist für Menschen da, nicht
+        für möblierte Luxuswohnungen!
+      </p>
+      <p>Wir brauchen Wasser! Wir brauchen Licht! Wir brauchen Heizung!</p>
+      <p>
+        Unterstützt eure Nachbarn! Gemeinsam können wir die Entmenschlichung
+        unserer Straße stoppen!
+      </p>
+      <p>
+        A house with 40 families was evicted in one night without any offers of
+        alternative housing. ALready for more then 1 month. Repair work is
+        becoming endless and turning into gentrification.
+      </p>
+      <p>
+        Let's stop the inhumane policies of landlords together! Landlords are
+        not humanlords! The city is for people, not furnished luxury apartments!
+      </p>
+      <p>We need water! We need light! We need heating!</p>
+      <p>
+        Support your neighbors! Together we can stop dehumanisation of our
+        street!
+      </p>
+    </div>
   </body>
 </html>
 
@@ -78,50 +105,73 @@
     font-family: "Gravity";
     src: url("/ABCGravityVariable.woff2") format("woff2");
   }
+  body {
+    position: relative;
+  }
+  .stickers {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+  }
+  data {
+    font-family: "Stefan Simple";
+    color: inherit;
+  }
   a,
   a:visited {
+    font-family: "Stefan Simple";
     color: inherit;
-	text-decoration: none;
+    text-decoration: none;
   }
   a::before {
-	content: "→";
-	font-family: "Stefan Bubble";
-	margin-right: .5ch;
+    content: "→";
+    font-family: "Stefan Bubble";
+    margin-right: 0.5ch;
   }
   a::after {
-	content: "←";
-	font-family: "Stefan Bubble";
-	margin-left: .5ch;
-	text-decoration: none !important;
+    content: "←";
+    font-family: "Stefan Bubble";
+    margin-left: 0.5ch;
+    text-decoration: none !important;
   }
   html,
   body {
     overscroll-behavior: none;
   }
   body {
-	padding-top: 50px;
-	padding-bottom: 50px;
-	padding-left: 25px;
-	padding-right: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(241 0 239);;
-    color: white;
+    background: #17ffc5;
+    color: black;
     & > * + * {
-      margin-top: 1em;
+      margin-top: 50px;
     }
   }
   * {
     margin: 0;
   }
-  h1 {
+  h1,
+  h3 {
     font-family: "Gravity";
-    font-variation-settings: "wght" 1000;
-    text-transform: uppercase;
+    font-variation-settings:
+      "wght" 1000,
+      "wdth" 70;
+    // text-transform: uppercase;
+    // white-space: pre-line;
     letter-spacing: -0.01em;
     font-size: calc(50px + 5vw);
+    line-height: 0.8em;
+    text-align: center;
+    font-weight: 400;
   }
   h2,
   .location {
@@ -133,32 +183,27 @@
     text-align: center;
     font-weight: 400;
   }
-  h3 {
-    font-family: "Gravity", sans-serif;
-    font-variation-settings:
-      "wght" 1000,
-      "wdth" 80;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    font-size: calc(50px + 3vw);
-  }
   .message {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2ch;
-	max-width: 100ch;
-	font-size: 20px;
-	font-family: "Stefan Simple";
-	white-space: pre-line;
-	@media (max-width: 800px) {
-		grid-template-columns: 1fr;
-		& > * + * {
-			margin-top: 2ch;
-		}
-	}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    gap: 1em 4ch;
+    max-width: 72ch;
+    font-size: 20px;
+    font-family: "Stefan Simple";
+    // white-space: pre;
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+      & > * + * {
+        margin-top: 2ch;
+      }
+    }
   }
   .media-coverage {
     font-family: "Gravity", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     font-size: calc(16px + 1vw);
     text-align: center;
     list-style: none;

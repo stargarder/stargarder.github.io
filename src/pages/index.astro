@@ -108,6 +108,7 @@ import Sticker from "../components/Sticker.astro";
   @font-face {
     font-family: "Gravity";
     src: url("/ABCGravityVariable.woff2") format("woff2");
+    
   }
   body {
     position: relative;
@@ -119,6 +120,8 @@ import Sticker from "../components/Sticker.astro";
     height: 100%;
     left: 0;
     overflow: hidden;
+    pointer-events: none;
+    user-select: none;
   }
   data {
     font-family: "Stefan Simple";
@@ -132,12 +135,12 @@ import Sticker from "../components/Sticker.astro";
   }
   a::before {
     content: "→";
-    font-family: "Stefan Bubble";
+    font-family: "Stefan Simple";
     margin-right: 0.5ch;
   }
   a::after {
     content: "←";
-    font-family: "Stefan Bubble";
+    font-family: "Stefan Simple";
     margin-left: 0.5ch;
     text-decoration: none !important;
   }
@@ -150,13 +153,19 @@ import Sticker from "../components/Sticker.astro";
     padding-bottom: 50px;
     padding-left: 25px;
     padding-right: 25px;
+    @media (max-width: 800px) {
+      padding-top: 20px;
+      padding-bottom: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #17ffc5;
     color: black;
-    & > * + * {
+    & > *:not(.stickers) + * {
       margin-top: 50px;
     }
   }
@@ -165,7 +174,7 @@ import Sticker from "../components/Sticker.astro";
   }
   h1,
   h3 {
-    font-family: "Gravity";
+    font-family: "Gravity", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-variation-settings:
       "wght" 1000,
       "wdth" 70;
@@ -185,7 +194,7 @@ import Sticker from "../components/Sticker.astro";
     font-family: "Stefan Simple";
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    font-size: 2vw;
+    font-size: 40px;
     white-space: pre-line;
     text-align: center;
     font-weight: 400;
@@ -211,7 +220,11 @@ import Sticker from "../components/Sticker.astro";
   .media-coverage {
     font-family: "Gravity", sans-serif;
     display: grid;
-    grid-template-columns: max-content max-content;
+    gap: 0 4ch;
+    @media (max-width: 800px) {
+      gap: 0 2ch;
+    }
+    grid-template-columns: auto auto;
     font-size: calc(16px + 1vw);
     text-align: center;
     list-style: none;

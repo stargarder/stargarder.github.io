@@ -21,8 +21,11 @@ import Sticker from "../components/Sticker.astro";
       <Sticker content="👻" />
     </div>
     <h1>Demo</h1>
-    <h2>Stargarder gegen Verdrangung</h2>
-    <h1>Komm! Mach Mit! Solidarität! Come! Join! Solidarity!</h1>
+    <h2>Stargarder gegen Verdrängung</h2>
+    <div>
+      <h1>Komm! Mach Mit! Solidarität!</h1>
+      <h1>Come! Join! Solidarity!</h1>
+    </div>
     <p class="location">6. März um 18:00 bei der Gethsemane-Kirche</p>
     <h3>Media Coverage</h3>
     <div class="media-coverage">
@@ -56,8 +59,8 @@ import Sticker from "../components/Sticker.astro";
       </a>
       <data> 12.2.2026 </data>
     </div>
-    <h1>Our Story</h1>
     <div class="message">
+      <h1>Unsere Geschichte</h1>
       <p>
         Ein Haus mit 40 Familien wurde über Nacht ohne Angebot einer
         Ersatzunterkunft geräumt. Das ist nun schon seit über einem Monat so.
@@ -74,6 +77,7 @@ import Sticker from "../components/Sticker.astro";
         Unterstützt eure Nachbarn! Gemeinsam können wir die Entmenschlichung
         unserer Straße stoppen!
       </p>
+      <h1>Our Story</h1>
       <p>
         A house with 40 families was evicted in one night without any offers of
         alternative housing. ALready for more then 1 month. Repair work is
@@ -168,17 +172,20 @@ import Sticker from "../components/Sticker.astro";
     // text-transform: uppercase;
     // white-space: pre-line;
     letter-spacing: -0.01em;
-    font-size: calc(50px + 5vw);
+    font-size: 5vw;
     line-height: 0.8em;
     text-align: center;
     font-weight: 400;
+    @media (max-width: 800px) {
+      font-size: 10vw;
+    }
   }
   h2,
   .location {
     font-family: "Stefan Simple";
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    font-size: calc(20px + 2vw);
+    font-size: 2vw;
     white-space: pre-line;
     text-align: center;
     font-weight: 400;
@@ -186,7 +193,7 @@ import Sticker from "../components/Sticker.astro";
   .message {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
     grid-auto-flow: column;
     gap: 1em 4ch;
     max-width: 72ch;
@@ -194,7 +201,8 @@ import Sticker from "../components/Sticker.astro";
     font-family: "Stefan Simple";
     // white-space: pre;
     @media (max-width: 800px) {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       & > * + * {
         margin-top: 2ch;
       }
@@ -203,7 +211,7 @@ import Sticker from "../components/Sticker.astro";
   .media-coverage {
     font-family: "Gravity", sans-serif;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: max-content max-content;
     font-size: calc(16px + 1vw);
     text-align: center;
     list-style: none;

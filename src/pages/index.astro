@@ -5,8 +5,6 @@ import Sticker from "../components/Sticker.astro";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Stargarder gegen Verdrängung</title>
@@ -27,6 +25,7 @@ import Sticker from "../components/Sticker.astro";
       <h1>Come! Join! Solidarity!</h1>
     </div>
     <p class="location">6. März um 18:00 bei der Gethsemane-Kirche</p>
+    <img src="/map.svg" class="image" alt="Demo Flyer" style="max-width: 500px; height: auto" />
     <h3>Media Coverage</h3>
     <div class="media-coverage">
       <a
@@ -99,19 +98,22 @@ import Sticker from "../components/Sticker.astro";
 <style lang="scss">
   @font-face {
     font-family: "Stefan Bubble";
-    src: url("/ABCStefan-Bubble.woff2") format("woff2");
+    src: url("/ABCStefan-Bubble.subset.woff2") format("woff2");
   }
   @font-face {
     font-family: "Stefan Simple";
-    src: url("/ABCStefan-Simple.woff2") format("woff2");
+    src: url("/ABCStefan-Simple.subset.woff2") format("woff2");
   }
   @font-face {
     font-family: "Gravity";
-    src: url("/ABCGravityVariable.woff2") format("woff2");
+    src: url("/ABCGravityVariable.subset.woff2") format("woff2");
     
   }
   body {
     position: relative;
+  }
+  .image {
+    width: 100%;
   }
   .stickers {
     position: absolute;

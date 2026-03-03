@@ -10,88 +10,219 @@ import Sticker from "../components/Sticker.astro";
     <title>Stargarder gegen Verdrängung</title>
   </head>
   <body>
-    <div class="stickers">
+    <!-- <div class="stickers">
       <Sticker content="👾" />
       <Sticker content="⚡" />
       <Sticker content="⛈" />
       <Sticker content="🤡" />
       <Sticker content="👹" />
       <Sticker content="👻" />
+    </div> -->
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button type="button" data-set-lang="de">DE</button>
+      <button type="button" data-set-lang="en">EN</button>
     </div>
     <h1>Demo</h1>
     <h2>Stargarder gegen Verdrängung</h2>
-    <div>
-      <h1>Komm! Mach Mit! Solidarität!</h1>
-      <h1>Come! Join! Solidarity!</h1>
-    </div>
-    <p class="location">6. März um 18:00 bei der Gethsemane-Kirche</p>
-    <img src="/map.svg" class="image" alt="Demo Flyer" style="max-width: 500px; height: auto" />
-    <h3>Media Coverage</h3>
+    <h1 data-lang="de">Kommt! Macht mit! Solidarität!</h1>
+    <h1 data-lang="en">Come! Join! Solidarity!</h1>
+    <p class="location" data-lang="de">
+      Freitag, 6. März um 18:00, bei der <a
+        href="https://maps.app.goo.gl/RFj5iowZPQy1icsN6"
+        target="_blank">Gethsemane-Kirche</a
+      >
+    </p>
+    <p class="location" data-lang="en">
+      Friday, March 6 at 18:00, at <a
+        href="https://maps.app.goo.gl/RFj5iowZPQy1icsN6"
+        target="_blank">Gethsemane Church</a
+      >
+    </p>
+    <img
+      src="/map.svg"
+      class="image"
+      alt="Demo Flyer"
+      style="max-width: 500px; height: auto"
+    />
+    <h3 data-lang="de">Medienberichterstattung</h3>
+    <h3 data-lang="en">Media Coverage</h3>
     <div class="media-coverage">
       <a
         href="https://taz.de/Kellerbrand-in-der-Stargarder-Strasse/!6157145/"
         target="_blank">TAZ.de</a
       >
-      <data> 27.2.2026 </data>
+      <span class="date">27.2.2026</span>
       <a
         href="https://www.morgenpost.de/bezirke/pankow/article411262470/bittere-botschaften-nach-brand-120-menschen-ihrer-haeuser-beraubt.html"
         target="_blank">Morgenpost</a
       >
-      <data> 21.2.2026 </data>
+      <span class="date">21.2.2026</span>
       <a
         href="https://www.berliner-zeitung.de/mensch-metropole/unfaehigkeit-oder-entmietung-der-kellerbrand-in-der-stargarder-strasse-li.10019128"
         target="_blank">Berliner Zeitung</a
       >
-      <data> 15.2.2026 </data>
+      <span class="date">15.2.2026</span>
       <a
         href="https://www.loky.news/loky-sprengung-jahn-sportpark/#:~:text=was%20tun%2C%20wenn's%20brennt%3F"
         target="_blank"
       >
         Loky News
       </a>
-      <data> 13.2.2026 </data>
+      <span class="date">13.2.2026</span>
       <a
         href="https://www.tagesspiegel.de/berlin/bezirke/pankow/ein-kellerbrand-mit-verheerenden-folgen-40-familien-in-berlin-sind-seit-wochen-wohnungslos--ein-ende-ist-nicht-in-sicht-15236237.html"
         target="_blank"
       >
         Tagesspiegel
       </a>
-      <data> 12.2.2026 </data>
+      <span class="date">12.2.2026</span>
     </div>
-    <div class="message">
-      <h1>Unsere Geschichte</h1>
-      <p>
-        Ein Haus mit 40 Familien wurde über Nacht ohne Angebot einer
-        Ersatzunterkunft geräumt. Das ist nun schon seit über einem Monat so.
-        Die Reparaturarbeiten ziehen sich endlos hin und führen zu einer
-        Gentrifizierung.
-      </p>
-      <p>
-        Lasst uns gemeinsam die unmenschliche Politik der Vermieter stoppen!
-        Landlord sind keine MenschenLord! Die Stadt ist für Menschen da, nicht
-        für möblierte Luxuswohnungen!
-      </p>
-      <p>Wir brauchen Wasser! Wir brauchen Licht! Wir brauchen Heizung!</p>
-      <p>
-        Unterstützt eure Nachbarn! Gemeinsam können wir die Entmenschlichung
-        unserer Straße stoppen!
-      </p>
-      <h1>Our Story</h1>
-      <p>
-        A house with 40 families was evicted in one night without any offers of
-        alternative housing. ALready for more then 1 month. Repair work is
-        becoming endless and turning into gentrification.
-      </p>
-      <p>
-        Let's stop the inhumane policies of landlords together! Landlords are
-        not humanlords! The city is for people, not furnished luxury apartments!
-      </p>
-      <p>We need water! We need light! We need heating!</p>
-      <p>
-        Support your neighbors! Together we can stop dehumanisation of our
-        street!
-      </p>
+    <h3 data-lang="de">Programm</h3>
+    <h3 data-lang="en">Program</h3>
+    <div class="timetable">
+      <div>18:00</div><div>
+        <span data-lang="de"
+          >Start der Demonstration (vor der Stargarder Str. 76 /
+          Gethsemane-Kirche)</span
+        >
+        <span data-lang="en"
+          >Start of the demonstration (in front of Stargarder Str. 76 /
+          Gethsemane Church)</span
+        >
+      </div>
+      <div>18:30</div>
+      <div>
+        <div data-lang="de">Redebeiträge</div>
+        <div data-lang="en">Speeches and contributions</div>
+        <ul data-lang="de">
+          <li>betroffene Mieter:innen und Nachbar:innen</li>
+          <li>
+            Maria Bigos, Fraktionsvorsitzende der Linksfraktion BVV Pankow
+          </li>
+          <li>
+            Linda Vierecke, Mitglied des Abgeordnetenhauses von Berlin,
+            SPD-Fraktion
+          </li>
+          <li>
+            Julia Schneider MdB, für Pankow im Bundestag, Bündnis 90/Die Grünen
+          </li>
+          <li>Initiative Pankow gegen Verdrängung</li>
+        </ul>
+        <ul data-lang="en">
+          <li>affected tenants and neighbours</li>
+          <li>
+            Maria Bigos, parliamentary group chair of The Left in Pankow
+            district council
+          </li>
+          <li>
+            Linda Vierecke, Member of the Berlin House of Representatives, SPD
+            parliamentary group
+          </li>
+          <li>
+            Julia Schneider, Member of Parliament for Pankow, Bündnis 90/Die
+            Grünen
+          </li>
+          <li>Initiative Pankow gegen Verdrängung</li>
+        </ul>
+      </div>
+      <div>20:00</div><div>
+        <span data-lang="de"
+          >Nachbarschaftstreffen für alle im Hof unseres Hauses mit Suppe und
+          performativer Installation der Künstlerin Marina Resende Santos</span
+        >
+        <span data-lang="en"
+          >Neighbourhood meeting for everyone in the yard of our home with soup
+          and a performative installation by artist Marina Resende Santos</span
+        >
+      </div>
+      <div>21:00</div>
+      <div>
+        <span data-lang="de">Ende</span>
+        <span data-lang="en">End</span>
+      </div>
     </div>
+    <h3 data-lang="de">
+      Seit Januar befinden wir uns in einer schwierigen Lage!
+    </h3>
+    <p data-lang="de">
+      Ein Haus mit 40 Familien wurde über Nacht ohne Angebot einer
+      Ersatzunterkunft geräumt. Das ist nun schon seit über einem Monat so. Die
+      Reparaturarbeiten ziehen sich endlos hin und führen zu einer
+      Gentrifizierung. Viele NachbarInnen haben schon auf ihre Wohnungen
+      verzichtet.
+    </p>
+    <p data-lang="de">
+      Lasst uns gemeinsam die unmenschliche Politik der Vermieter stoppen!
+      Landlord sind keine MenschenLord! Die Stadt ist für Menschen da, nicht für
+      möblierte Luxuswohnungen!
+    </p>
+    <h3 data-lang="de">Unsere Forderungen:</h3>
+    <ul data-lang="de">
+      <li>Wir brauchen Wasser! (sofort!)</li>
+      <li>Wir brauchen Strom! (mindestens Baulicht für alle Gebäude!)</li>
+      <li>Wir brauchen Heizung!</li>
+      <li>
+        Wir fordern einen verbindlichen und transparenten Zeitplan für die
+        Reparaturarbeiten.
+      </li>
+    </ul>
+    <h3 data-lang="en">Since January we are in a difficult situation!</h3>
+    <p data-lang="en">
+      40 families were forced to leave their homes and to live in the street
+      overnight and have been unable to return for 6 weeks. Some of us left
+      Berlin, others live separated from their families. Repair work is becoming
+      endless and turning into gentrification. Some neighbors have already given
+      up their apartments.
+    </p>
+    <p data-lang="en">
+      Let's stop the problematic policies of landlords together! Landlords are
+      not humanlords! The city is for people, not furnished luxury apartments!
+    </p>
+    <h3 data-lang="en">Our demands:</h3>
+    <ul data-lang="en">
+      <li>We need water! (asap)</li>
+      <li>We need light! (at least construction light for all buildings)</li>
+      <li>To restore gas supply (asap)!</li>
+      <li>
+        We demand a binding and transparent timetable for the repair works.
+      </li>
+    </ul>
+    <script is:inline>
+      const STORAGE_KEY = "stargarder-language";
+      const html = document.documentElement;
+      const buttons = document.querySelectorAll("[data-set-lang]");
+
+      const setLanguage = (lang) => {
+        html.lang = lang;
+        localStorage.setItem(STORAGE_KEY, lang);
+        document.querySelectorAll("[data-lang]").forEach((element) => {
+          element.hidden = element.dataset.lang !== lang;
+        });
+        buttons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.setLang === lang);
+        });
+      };
+
+      const savedLanguage = localStorage.getItem(STORAGE_KEY);
+      const browserLanguage = navigator.language?.toLowerCase().startsWith("de")
+        ? "de"
+        : "en";
+      const initialLanguage =
+        savedLanguage === "de" || savedLanguage === "en"
+          ? savedLanguage
+          : browserLanguage;
+
+      setLanguage(initialLanguage);
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const lang = button.dataset.setLang;
+          if (lang === "de" || lang === "en") {
+            setLanguage(lang);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 
@@ -107,10 +238,6 @@ import Sticker from "../components/Sticker.astro";
   @font-face {
     font-family: "Gravity";
     src: url("/ABCGravityVariable.subset.woff2") format("woff2");
-    
-  }
-  body {
-    position: relative;
   }
   .image {
     width: 100%;
@@ -125,26 +252,33 @@ import Sticker from "../components/Sticker.astro";
     pointer-events: none;
     user-select: none;
   }
-  data {
+  .date {
     font-family: "Stefan Simple";
     color: inherit;
+  }
+  .lang-switch {
+    display: inline-flex;
+    gap: 0.5rem;
+  }
+  .lang-switch button {
+    font-family: "Stefan Simple";
+    border: 4px solid black;
+    background: white;
+    color: black;
+    cursor: pointer;
+    padding: 0.2rem 1ch;
+    font-size: 2rem;
+    border-radius: 999px;
+  }
+  .lang-switch button.is-active {
+    background: black;
+    color: white;
   }
   a,
   a:visited {
     font-family: "Stefan Simple";
-    color: inherit;
+    color: blue;
     text-decoration: none;
-  }
-  a::before {
-    content: "→";
-    font-family: "Stefan Simple";
-    margin-right: 0.5ch;
-  }
-  a::after {
-    content: "←";
-    font-family: "Stefan Simple";
-    margin-left: 0.5ch;
-    text-decoration: none !important;
   }
   html,
   body {
@@ -161,22 +295,24 @@ import Sticker from "../components/Sticker.astro";
       padding-left: 10px;
       padding-right: 10px;
     }
-    font-family: sans-serif;
+    font-family: "Stefan Simple";
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #17ffc5;
     color: black;
-    & > *:not(.stickers) + * {
-      margin-top: 50px;
-    }
+  }
+  p {
+    max-width: 600px;
   }
   * {
     margin: 0;
   }
   h1,
   h3 {
-    font-family: "Gravity", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:
+      "Gravity", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-variation-settings:
       "wght" 1000,
       "wdth" 70;
@@ -196,28 +332,30 @@ import Sticker from "../components/Sticker.astro";
     font-family: "Stefan Simple";
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    font-size: 40px;
     white-space: pre-line;
     text-align: center;
     font-weight: 400;
   }
-  .message {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, auto);
-    grid-auto-flow: column;
-    gap: 1em 4ch;
+  .info {
     max-width: 72ch;
-    font-size: 20px;
     font-family: "Stefan Simple";
-    // white-space: pre;
-    @media (max-width: 800px) {
-      display: flex;
-      flex-direction: column;
-      & > * + * {
-        margin-top: 2ch;
-      }
+    line-height: 1.35;
+    & > * + * {
+      margin-top: 1rem;
     }
+  }
+  .info ul {
+    padding-left: 1.2em;
+  }
+  .info li + li {
+    margin-top: 0.5rem;
+  }
+  .timetable {
+    max-width: 40ch;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em 4ch;
+    font-family: "Stefan Simple";
   }
   .media-coverage {
     font-family: "Gravity", sans-serif;
@@ -227,8 +365,21 @@ import Sticker from "../components/Sticker.astro";
       gap: 0 2ch;
     }
     grid-template-columns: auto auto;
-    font-size: calc(16px + 1vw);
     text-align: center;
     list-style: none;
+    a::before {
+      content: "→";
+      font-family: "Stefan Simple";
+      margin-right: 0.5ch;
+    }
+    a::after {
+      content: "←";
+      font-family: "Stefan Simple";
+      margin-left: 0.5ch;
+      text-decoration: none !important;
+    }
+  }
+  body > *:not(.stickers) + * {
+    margin-top: 50px;
   }
 </style>

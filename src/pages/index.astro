@@ -353,7 +353,13 @@ import Sticker from "../components/Sticker.astro";
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.5em 4ch;
+    @media (max-width: 800px) {
+      gap: 0.5em 1ch;
+    }
     font-family: "Stefan Simple";
+    ul {
+      padding: 1ch;
+    }
   }
   .media-coverage {
     font-family: "Gravity", sans-serif;

@@ -1,5 +1,51 @@
 ---
-import Sticker from "../components/Sticker.astro";
+// import Sticker from "../components/Sticker.astro";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const gallerySlides = [
+  {
+    src: "/gallery/1.webp",
+    en: "Neighbours, tenants and supporters gathering in front of the building before the demo.",
+    de: "Nachbar:innen, Mieter:innen und Unterstützer:innen versammeln sich vor dem Gebäude vor der Demo.",
+  },
+  {
+    src: "/gallery/2.webp",
+    en: "Signs with our demands and unanswered questions before the demo.",
+    de: "Schilder mit unseren Forderungen und unbeantworteten Fragen vor der Demo.",
+  },
+  {
+    src: "/gallery/3.webp",
+    en: "Housing is a human right!",
+    de: "Wohnen is ein Grundrecht",
+  },
+  {
+    src: "/gallery/4.webp",
+    en: "Shorterm contracts is one of the issues of our house, the neighbourhood and the city.",
+    de: "Befristete Verträge sind eines der Probleme unseres Hauses, der Nachbarschaft und der Stadt.",
+  },
+  {
+    src: "/gallery/5.webp",
+    en: "People showing their solidarity with the affected tenants and neighbours and discussing the issues.",
+    de: "Menschen zeigen ihre Solidarität mit den betroffenen Mieter:innen und Nachbar:innen und diskutieren die Probleme.",
+  },
+  {
+    src: "/gallery/6.webp",
+    en: "Artist Marina Resende Santos created a performative installation using smoke-damaged potatoes from the basement, repurposing them to generate electricity for the house.",
+    de: "Künstlerin Marina Resende Santos hat eine performative Installation mit rauchgeschädigten Kartoffeln aus dem Keller geschaffen, die zur Stromerzeugung für das Haus wiederverwendet wurden.",
+  },
+  {
+    src: "/gallery/7.webp",
+    en: "Tenants showing their stories with the public",
+    de: "Die Mieter:innen teilen ihre Geschichten mit der Öffentlichkeit",
+  },
+  {
+    src: "/gallery/8.webp",
+    en: "The media is interested in our story and the issues we are facing.",
+    de: "Das Medieninteresse an unserer Geschichte und den Problemen, mit denen wir konfrontiert sind.",
+  }
+];
 ---
 
 <html lang="en">
@@ -25,6 +71,28 @@ import Sticker from "../components/Sticker.astro";
     </div>
     <h1 data-lang="en">Demo (Past Event)</h1>
     <h1 data-lang="de">Demo (Vergangenes Event)</h1>
+    <section class="gallery-section" aria-label="Demo gallery">
+      <div class="swiper" aria-live="polite">
+        <div class="swiper-wrapper">
+          {
+            gallerySlides.map((slide, index) => (
+              <figure class="swiper-slide">
+                <img src={slide.src} alt={slide.en} loading={index === 0 ? "eager" : "lazy"} />
+                <figcaption>
+                  <span data-lang="en">{slide.en}</span>
+                  <span data-lang="de">{slide.de}</span>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+        <div class="gallery-controls">
+          <button class="swiper-button-prev" aria-label="Previous slide"></button>
+          <div class="swiper-pagination"></div>
+          <button class="swiper-button-next" aria-label="Next slide"></button>
+        </div>
+      </div>
+    </section>
     <h2>Stargarder gegen Verdrängung</h2>
     <h1 data-lang="de">Kommt! Macht mit! Solidarität!</h1>
     <h1 data-lang="en">Come! Join! Solidarity!</h1>
@@ -241,6 +309,35 @@ import Sticker from "../components/Sticker.astro";
         });
       });
     </script>
+    <script>
+      import Swiper from "swiper";
+      import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
+
+      const gallery = document.querySelector(".swiper");
+
+      if (gallery) {
+        new Swiper(gallery, {
+          modules: [Navigation, Pagination, A11y, Autoplay],
+          loop: true,
+          spaceBetween: 20,
+          slidesPerView: 1,
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            addIcons: false,
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      }
+    </script>
   </body>
 </html>
 
@@ -388,6 +485,84 @@ import Sticker from "../components/Sticker.astro";
       margin-left: 0.5ch;
       text-decoration: none !important;
     }
+  }
+  .gallery-section {
+    width: min(600px, 100%);
+  }
+  .gallery-section h3 {
+    margin-bottom: 20px;
+  }
+  .swiper {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  .swiper-slide {
+    margin: 0;
+  }
+  .swiper-slide img {
+    // width: 100%;
+    margin: 0 auto;
+    // width: min(260px, 70vh);
+    width: 100%;
+    height: 70vh;
+    display: block;
+    object-fit: cover;
+  }
+  .swiper-slide figcaption {
+    margin-top: 12px;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .gallery-controls {
+    // margin-top: 14px;
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    gap: 10px;
+  }
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    position: static;
+    margin: 0;
+    width: auto;
+    height: auto;
+    color: black;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Stefan Simple";
+    font-size: 2.2rem;
+    line-height: 1;
+    justify-self: center;
+    margin-top: 0px !important;
+  }
+  :global(.swiper-button-prev::after),
+  :global(.swiper-button-next::after) {
+    font-size: inherit;
+    font-family: inherit;
+  }
+  :global(.swiper-navigation-icon) {
+    display: none !important;
+  }
+  :global(.swiper-button-prev::after) {
+    content: "\2190";
+  }
+  :global(.swiper-button-next::after) {
+    content: "\2192";
+  }
+  :global(.swiper-pagination) {
+    position: static;
+    justify-self: center;
+    text-align: center;
+  }
+  :global(.swiper-pagination-bullet) {
+    background: black;
+    opacity: 0.3;
+  }
+  :global(.swiper-pagination-bullet-active) {
+    opacity: 1;
   }
   body > * + * {
     margin-top: 50px;

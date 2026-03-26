@@ -44,7 +44,7 @@ const gallerySlides = [
     src: "/gallery/8.webp",
     en: "The media is interested in our story and the issues we are facing.",
     de: "Das Medieninteresse an unserer Geschichte und den Problemen, mit denen wir konfrontiert sind.",
-  }
+  },
 ];
 ---
 
@@ -53,7 +53,10 @@ const gallerySlides = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <script data-goatcounter="https://stargarder.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script
+      data-goatcounter="https://stargarder.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"></script>
     <title>Stargarder gegen Verdrängung</title>
   </head>
   <body>
@@ -77,7 +80,11 @@ const gallerySlides = [
           {
             gallerySlides.map((slide, index) => (
               <figure class="swiper-slide">
-                <img src={slide.src} alt={slide.en} loading={index === 0 ? "eager" : "lazy"} />
+                <img
+                  src={slide.src}
+                  alt={slide.en}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
                 <figcaption>
                   <span data-lang="en">{slide.en}</span>
                   <span data-lang="de">{slide.de}</span>
@@ -87,7 +94,8 @@ const gallerySlides = [
           }
         </div>
         <div class="gallery-controls">
-          <button class="swiper-button-prev" aria-label="Previous slide"></button>
+          <button class="swiper-button-prev" aria-label="Previous slide"
+          ></button>
           <div class="swiper-pagination"></div>
           <button class="swiper-button-next" aria-label="Next slide"></button>
         </div>
@@ -96,12 +104,14 @@ const gallerySlides = [
     <h2>Stargarder gegen Verdrängung</h2>
     <h1 data-lang="de">Kommt! Macht mit! Solidarität!</h1>
     <h1 data-lang="en">Come! Join! Solidarity!</h1>
-    <p class="location" data-lang="de">Freitag, 6. März um 18:00, bei der <a
+    <p class="location" data-lang="de">
+      Freitag, 6. März um 18:00, bei der <a
         href="https://maps.app.goo.gl/RFj5iowZPQy1icsN6"
         target="_blank">Gethsemane-Kirche</a
       >
     </p>
-    <p class="location" data-lang="en">Friday, March 6 at 18:00, at <a
+    <p class="location" data-lang="en">
+      Friday, March 6 at 18:00, at <a
         href="https://maps.app.goo.gl/RFj5iowZPQy1icsN6"
         target="_blank">Gethsemane Church</a
       >
@@ -222,24 +232,46 @@ const gallerySlides = [
         We demand a binding and transparent timetable for the repair works.
       </li>
     </ul>
-        <h3 data-lang="de">Medienberichterstattung</h3>
+    <h3 data-lang="de">Medienberichterstattung</h3>
     <h3 data-lang="en">Media Coverage</h3>
     <div class="media-coverage">
       <a
+        href="https://www.nd-aktuell.de/artikel/1198485.prenzlauer-berg-berlin-mieter-sehen-verdraengung-durch-moebliertes-wohnen.html"
+        target="_blank">ND</a
+      >
+      <span class="date">22.3.2026</span>
+      <a
+        href="https://www.berliner-mieterverein.de/aktuelles/newsletter/lebensgefaehrliche-entmietungsmethode-40-familien-nach-brand-wohnungslos.htm"
+        target="_blank"
+      >
+        Berliner Mieterverein
+      </a>
+      <span class="date">19.3.2026</span>
+      <a
+        href="https://www.linksfraktion-pankow.de/themen/mieten-und-wohnen/news/ein-haus-ein-brand-eine-verdraengungsgeschichte/"
+        target="_blank"
+      >
+        Die Linke Pankow
+      </a>
+      <span class="date">9.3.2026</span>
+      <a
         href="https://www.rbb-online.de/der-tag/ort/Vor-Ort-in-der-Stargarder-Strasse.html"
-        target="_blank"      >
+        target="_blank"
+      >
         RBB
       </a>
       <span class="date">6.3.2026</span>
       <a
         href="https://www.morgenpost.de/bezirke/pankow/article411394290/mieter-demonstrieren-gegen-leerstand-nach-kellerbrand-in-prenzlauer-berg.html"
-        target="_blank"      >
+        target="_blank"
+      >
         Morgenpost
       </a>
       <span class="date">6.3.2026</span>
       <a
         href="https://www.tagesspiegel.de/berlin/bezirke/pankow/akutes-beispiel-fur-verdrangungsstrategien-kehren-die-mieter-nie-wieder-in-das-berliner-kellerbrand-haus-zuruck-15319221.html"
-        target="_blank"      >
+        target="_blank"
+      >
         Tagesspiegel
       </a>
       <span class="date">5.3.2026</span>
